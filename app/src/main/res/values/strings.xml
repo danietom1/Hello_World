@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Hello World</string>
-    <string name="textview" translatable="false">TextView</string>
+    <string name="textview" translatable="false">Master</string>
 </resources>

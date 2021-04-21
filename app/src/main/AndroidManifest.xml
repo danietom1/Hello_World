@@ -7,8 +7,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HelloWorld">
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.HelloWorld"
+        android:fullBackupContent="true">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.HelloWorld.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

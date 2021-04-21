@@ -2,7 +2,7 @@
 <resources>
     <string name="TraduccionHolamundo">Hola Mudo!</string>
     <string name="menu_home">Página Principal</string>
-    <string name="menu_gallery">Galeria</string>
+    <string name="menu_repository">Repositorio Ejercicios</string>
     <string name="action_settings">Configuración</string>
     <string name="menu_slideshow">Presentacion</string>
     <string name="navigation_drawer_open">Abrir barra de navegación</string>

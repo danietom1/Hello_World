@@ -2,7 +2,7 @@
     <string name="app_name" translatable="false">TStretch</string>
     <string name="textView" translatable="false">Master</string>
     <string name="TraduccionHolamundo">Hello World!</string>
-    <string name="title_activity_main" translatable="false">Main2Activity</string>
+    <string name="title_activity_main" translatable="false">TStrechApp</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title" translatable="false">Android Studio</string>

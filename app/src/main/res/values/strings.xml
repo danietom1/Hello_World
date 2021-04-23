@@ -12,7 +12,7 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_repository">Repository Exercises</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_Alarms">Alarms</string>
     <string name="menu_settings">Settings</string>
 
 </resources>

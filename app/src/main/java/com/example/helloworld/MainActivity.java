@@ -1,7 +1,6 @@
 package com.example.helloworld;
 
 import android.os.Bundle;
-import android.view.View;
 import android.view.Menu;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_Repository, R.id.nav_Alarms)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

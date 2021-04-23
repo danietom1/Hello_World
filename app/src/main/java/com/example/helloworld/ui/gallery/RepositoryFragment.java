@@ -18,8 +18,7 @@ public class RepositoryFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        repositoryViewModel =
-                new ViewModelProvider(this).get(RepositoryViewModel.class);
+        repositoryViewModel = new ViewModelProvider(this).get(RepositoryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
         final TextView textView = root.findViewById(R.id.text_gallery);
         repositoryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);

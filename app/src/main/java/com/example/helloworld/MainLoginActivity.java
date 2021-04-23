@@ -43,11 +43,53 @@ public class MainLoginActivity extends AppCompatActivity {
             mAuth = FirebaseAuth.getInstance();
             mDatabase = FirebaseDatabase.getInstance().getReference();
 
+
             //instanciar editText
             mEditTextEmail = (EditText) findViewById(R.id.EditEmailAddress);
             mEditTextContrasena = (EditText) findViewById(R.id.EditPassword);
             mButtonRegistrar = (Button) findViewById(R.id.Registrarbutton);
             mButtonLogin = (Button) findViewById(R.id.Loginbutton);
+
+            //Accion Boton Login
+            mButtonLogin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    email = mEditTextEmail.getText().toString();
+                    contrasena = mEditTextContrasena.getText().toString();
+
+                    if (!email.isEmpty() && !contrasena.isEmpty() ){
+
+                        if(contrasena.length() >= 6 ){
+                            loginUser();
+                        }
+                        else{
+                            Toast.makeText(MainLoginActivity.this, "La contraseña debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    else {
+                        Toast.makeText(MainLoginActivity.this, "Debe completar los campos", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+
+                private void loginUser(){
+                    mAuth.signInWithEmailAndPassword(email, contrasena).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                startActivity(new Intent(MainLoginActivity.this, MainActivity.class));
+                                finish();
+                            }
+                            else{
+                                Toast.makeText(MainLoginActivity.this, "No se puede iniciar sesión", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
+                }
+            });
+
 
             //Accion Boton Registrar
             mButtonRegistrar.setOnClickListener(new View.OnClickListener() {
@@ -98,18 +140,22 @@ public class MainLoginActivity extends AppCompatActivity {
                                     startActivity(new Intent(MainLoginActivity.this, home.class));
                                     finish();
                                 }
-                                /*else{
+                                else{
                                     Toast.makeText(MainLoginActivity.this, "Los datos no se crearon correctamente", Toast.LENGTH_SHORT).show();
-                                }*/
+                                }
                             }
                         });
                     }
-                    /*else{
+                    else{
                         Toast.makeText(MainLoginActivity.this, "Ya existe un usuario con este correo", Toast.LENGTH_SHORT).show();
-                    }*/
+                    }
                 }
             });
 
 
         }
+
+
+
+
 }

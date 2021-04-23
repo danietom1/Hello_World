@@ -1,49 +1,115 @@
 package com.example.helloworld;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-    public class MainLoginActivity extends AppCompatActivity {
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MainLoginActivity extends AppCompatActivity {
         
         private EditText mEditTextEmail;
-        private EditText mEditTextContraseña;
+        private EditText mEditTextContrasena;
         private Button mButtonRegistrar;
         private Button mButtonLogin;
 
         //Datos a Registrar
         private String email = "";
-        private String contraseña = "";
+        private String contrasena = "";
+
+        //registro de usuario
+        FirebaseAuth mAuth;
+        DatabaseReference mDatabase;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.authentication);
 
+            mAuth = FirebaseAuth.getInstance();
+            mDatabase = FirebaseDatabase.getInstance().getReference();
+
             //instanciar editText
             mEditTextEmail = (EditText) findViewById(R.id.EditEmailAddress);
-            mEditTextContraseña = (EditText) findViewById(R.id.EditPassword);
+            mEditTextContrasena = (EditText) findViewById(R.id.EditPassword);
             mButtonRegistrar = (Button) findViewById(R.id.Registrarbutton);
             mButtonLogin = (Button) findViewById(R.id.Loginbutton);
 
-
-
-            //Accion Boton
+            //Accion Boton Registrar
             mButtonRegistrar.setOnClickListener(new View.OnClickListener() {
+
                 @Override
                 public void onClick(View view) {
                     email = mEditTextEmail.getText().toString();
-                    contraseña = mEditTextContraseña.getText().toString();
+                    contrasena = mEditTextContrasena.getText().toString();
 
                     //engresa o no ingresa datos
-                    if (!email.isEmpty() && !contraseña.isEmpty() ){
-                        registerUser()
-;                    }
+                    if (!email.isEmpty() && !contrasena.isEmpty() ){
 
+                        if(contrasena.length() >=6 ){
+                            registerUser();
+                        }
+                        else{
+                            Toast.makeText(MainLoginActivity.this, "La contraseña debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    else {
+                        Toast.makeText(MainLoginActivity.this, "Debe completar los campos", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
+        }
+
+        private void registerUser(){
+            mAuth.createUserWithEmailAndPassword(email, contrasena).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+
+                    //ingreso a la app correctamente
+                    if(task.isSuccessful()){
+
+                        Map<String, Object> map = new HashMap<>();
+                        map.put("email", email);
+                        map.put("contraseña", contrasena);
+
+                        String id = mAuth.getCurrentUser().getUid();
+
+                        mDatabase.child("Usuarios").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task2) {
+                                if (task2.isSuccessful()){
+                                    //envio de usuario a otra pantalla
+                                    startActivity(new Intent(MainLoginActivity.this, home.class));
+                                    finish();
+                                }
+                                /*else{
+                                    Toast.makeText(MainLoginActivity.this, "Los datos no se crearon correctamente", Toast.LENGTH_SHORT).show();
+                                }*/
+                            }
+                        });
+                    }
+                    /*else{
+                        Toast.makeText(MainLoginActivity.this, "Ya existe un usuario con este correo", Toast.LENGTH_SHORT).show();
+                    }*/
+                }
+            });
+
+
         }
 }

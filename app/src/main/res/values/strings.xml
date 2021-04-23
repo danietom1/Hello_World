@@ -17,6 +17,7 @@
     <string name="proveedor" translatable="false">Proveedor</string>
     <string name="contraseña" translatable="false">contraseña</string>
     <string name="email" translatable="false">Email</string>
+    <string name="title_activity_scrolling">HomeTest</string>
 
 
 </resources>

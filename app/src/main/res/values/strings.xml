@@ -10,9 +10,13 @@
     <string name="nav_header_desc" translatable="false">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    //Items del menu
     <string name="menu_home">Home</string>
     <string name="menu_repository">Repository Exercises</string>
     <string name="menu_Alarms">Alarms</string>
     <string name="menu_settings">Settings</string>
+
+    //Items en la pantalla configuracion
+    <string name="kids_mode">Kids mode</string>
 
 </resources>

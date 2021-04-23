@@ -8,4 +8,5 @@
     <string name="navigation_drawer_open">Abrir barra de navegación</string>
     <string name="navigation_drawer_close">Cerrar barra de navegación</string>
     <string name="menu_settings">Configuraciones</string>
+    <string name="kids_mode">Modo niños</string>
 </resources>

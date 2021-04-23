@@ -4,8 +4,9 @@
     <string name="menu_home">Página Principal</string>
     <string name="menu_repository">Repositorio Ejercicios</string>
     <string name="action_settings">Configuración</string>
-    <string name="menu_slideshow">Presentacion</string>
+    <string name="menu_alarmas">Alarmas</string>
     <string name="navigation_drawer_open">Abrir barra de navegación</string>
     <string name="navigation_drawer_close">Cerrar barra de navegación</string>
     <string name="menu_settings">Configuraciones</string>
+    <string name="kids_mode">Modo niños</string>
 </resources>

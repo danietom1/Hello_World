@@ -10,7 +10,7 @@ public class RepositoryViewModel extends ViewModel {
 
     public RepositoryViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("Aqui van los ejercicios");
     }
 
     public LiveData<String> getText() {

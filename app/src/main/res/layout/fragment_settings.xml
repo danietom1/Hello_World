@@ -27,23 +27,19 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="32dp"
+        android:divider="@color/black"
+        android:dividerPadding="100dp"
         android:orientation="vertical"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <Switch
+            android:id="@+id/switch4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Switch
-                android:id="@+id/switch1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/kids_mode" />
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:text="@string/kids_mode" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

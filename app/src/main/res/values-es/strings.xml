@@ -9,4 +9,6 @@
     <string name="navigation_drawer_close">Cerrar barra de navegación</string>
     <string name="menu_settings">Configuración</string>
     <string name="kids_mode">Modo niños</string>
+    <string name="Register_Btn">Registrarse</string>
+    <string name="LogIn_Btn">Iniciar Sesión</string>
 </resources>

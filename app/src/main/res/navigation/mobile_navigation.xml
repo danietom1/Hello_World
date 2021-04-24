@@ -12,14 +12,22 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.helloworld.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_Repository"
+        android:name="com.example.helloworld.ui.gallery.RepositoryFragment"
+        android:label="@string/menu_repository"
+        tools:layout="@layout/fragment_alarms" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_Alarms"
         android:name="com.example.helloworld.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:label="@string/menu_Alarms"
+        tools:layout="@layout/fragment_repository" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.helloworld.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+
+
 </navigation>

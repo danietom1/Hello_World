@@ -1,16 +1,16 @@
-package com.example.helloworld.ui.slideshow;
+package com.example.helloworld.ui.gallery;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class RepositoryViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public RepositoryViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Esta es la vista de alarmas");
+        mText.setValue("Aqui van los ejercicios");
     }
 
     public LiveData<String> getText() {

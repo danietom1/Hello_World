@@ -20,11 +20,8 @@
     <string name="email" translatable="false">Email</string>
 
 
-
     //Items en la pantalla configuracion
     <string name="kids_mode">Kids mode</string>
-
-
 
 
     <string name="title_activity_scrolling" translatable="false">ScrollingActivity</string>
@@ -119,5 +116,6 @@
     </string>
     <string name="Register_Btn">Sing Up</string>
     <string name="LogIn_Btn">Log In</string>
+    <string name="tstretch" translatable="false">TStretch</string>
 
 </resources>

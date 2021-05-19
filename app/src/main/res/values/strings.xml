@@ -117,5 +117,8 @@
     <string name="Register_Btn">Sing Up</string>
     <string name="LogIn_Btn">Log In</string>
     <string name="tstretch" translatable="false">TStretch</string>
+    <string name="DialogComplete">Complete!</string>
+    <string name="MessageComplete">Sign up complete.</string>
+    <string name="DialogContinue">Continue</string>
 
 </resources>

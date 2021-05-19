@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 Intent intent = new Intent(MainActivity.this, MainLoginActivity.class);
                 startActivity(intent);
+                finish();
                 return false;
             }
         });

@@ -11,4 +11,7 @@
     <string name="kids_mode">Modo niños</string>
     <string name="Register_Btn">Registrarse</string>
     <string name="LogIn_Btn">Iniciar Sesión</string>
+    <string name="DialogComplete">¡Completado!</string>
+    <string name="MessageComplete">Registro completado.</string>
+    <string name="DialogContinue">Continuar</string>
 </resources>

@@ -121,4 +121,8 @@
     <string name="MessageComplete">Sign up complete.</string>
     <string name="DialogContinue">Continue</string>
 
+    //
+    Alarma
+    <string name="new_notification">Nueva notificación</string>
+
 </resources>

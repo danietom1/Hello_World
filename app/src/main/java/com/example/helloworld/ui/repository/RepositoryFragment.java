@@ -1,4 +1,4 @@
-package com.example.helloworld.ui.gallery;
+package com.example.helloworld.ui.repository;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

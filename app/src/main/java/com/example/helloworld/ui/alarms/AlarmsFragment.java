@@ -1,4 +1,4 @@
-package com.example.helloworld.ui.slideshow;
+package com.example.helloworld.ui.alarms;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,17 +12,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.helloworld.R;
 
-public class SlideshowFragment extends Fragment {
+public class AlarmsFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private AlarmsViewModel alarmsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        alarmsViewModel =
+                new ViewModelProvider(this).get(AlarmsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_alarms, container, false);
         final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        alarmsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 }

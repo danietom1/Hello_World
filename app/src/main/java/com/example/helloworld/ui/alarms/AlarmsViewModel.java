@@ -1,14 +1,14 @@
-package com.example.helloworld.ui.slideshow;
+package com.example.helloworld.ui.alarms;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class AlarmsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public AlarmsViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("Esta es la vista de alarmas");
     }

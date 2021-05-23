@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ScrollingActivity.class);
+                Intent intent = new Intent(v.getContext(), RepocitorioAlarmas.class);
                 startActivity(intent);
             }
         });
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 Intent intent = new Intent(MainActivity.this, MainLoginActivity.class);
                 startActivity(intent);
+                finish();
                 return false;
             }
         });

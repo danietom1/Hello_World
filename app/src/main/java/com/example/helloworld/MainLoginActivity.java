@@ -1,5 +1,6 @@
 package com.example.helloworld;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -137,8 +139,17 @@ public class MainLoginActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task2) {
                                 if (task2.isSuccessful()){
                                     //envio de usuario a otra pantalla
-                                    startActivity(new Intent(MainLoginActivity.this, home.class));
-                                    finish();
+                                    AlertDialog.Builder SignUpDialog = new AlertDialog.Builder(MainLoginActivity.this);
+                                    SignUpDialog.setTitle(R.string.DialogComplete);
+                                    SignUpDialog.setMessage(R.string.MessageComplete);
+                                    SignUpDialog.setPositiveButton(R.string.DialogContinue, new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            //No hacer nada
+                                        }
+                                    });
+                                    SignUpDialog.show();
+                                    //finish();
                                 }
                                 else{
                                     Toast.makeText(MainLoginActivity.this, "Los datos no se crearon correctamente", Toast.LENGTH_SHORT).show();
@@ -154,8 +165,5 @@ public class MainLoginActivity extends AppCompatActivity {
 
 
         }
-
-
-
 
 }

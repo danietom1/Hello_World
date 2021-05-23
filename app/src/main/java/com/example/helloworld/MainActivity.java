@@ -33,8 +33,9 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), RepocitorioAlarmas.class);
+                Intent intent = new Intent(v.getContext(), ModificacionAlarma.class);
                 startActivity(intent);
+                finish();
             }
         });
         /*fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

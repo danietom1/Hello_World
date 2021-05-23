@@ -1,6 +1,7 @@
 package com.example.helloworld;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
@@ -30,6 +31,10 @@ public class SplashScreen extends AppCompatActivity {
 
         textViewSplash.setAnimation(animacion2);
         imageSplash.setAnimation(animacion1);
+
+        Typeface TFLogoSplash = Typeface.createFromAsset(getAssets(),"Fonts/SLANT.TTF");
+
+        textViewSplash.setTypeface(TFLogoSplash);
 
         //enviar a otra pantalla
         new Handler().postDelayed(new Runnable() {

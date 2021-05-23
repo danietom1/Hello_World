@@ -1,24 +1,19 @@
 package com.example.helloworld;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-import java.util.Calendar;
+import androidx.appcompat.app.AppCompatActivity;
 
-import static java.security.AccessController.getContext;
+import java.util.Calendar;
 
 public class ModificacionAlarma extends AppCompatActivity {
 
@@ -85,9 +80,9 @@ public class ModificacionAlarma extends AppCompatActivity {
                     //al dar si va al inicio y cerramo
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent i = new Intent(getApplicationContext(), RepocitorioAlarmas.class);
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(i);
-
+                        finish();
                     }
                 });
                 builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {

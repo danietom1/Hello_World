@@ -9,15 +9,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
+        <activity android:name=".Ejerci"></activity>
         <activity
-            android:name="com.example.helloworld.ModificacionAlarma"
-            android:enabled="true"
-            />
-
+            android:name=".ModificacionAlarma"
+            android:enabled="true" />
         <activity
-            android:name="com.example.helloworld.RepocitorioAlarmas"
-            android:enabled="true"
-            />
+            android:name=".RepocitorioAlarmas"
+            android:enabled="true" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/Theme.HelloWorld.NoActionBar.FullScreen">
@@ -39,7 +37,6 @@
             android:name=".MainLoginActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.HelloWorld.NoActionBar" />
-
     </application>
 
 </manifest>
